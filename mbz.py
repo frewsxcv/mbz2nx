@@ -57,7 +57,6 @@ class MusicBrainz():
                         label.country = country.id,
                      label_name
                 WHERE label.name = label_name.id;"""
-        print([Label(*row) for row in self._query(sql)][:3])
         return [Label(*row) for row in self._query(sql)]
 
     @property
@@ -67,5 +66,4 @@ class MusicBrainz():
             FROM l_label_label AS l_l_l, link, link_type
             WHERE l_l_l.link = link.id
                 AND link.link_type = link_type.id"""
-        print([LabelRelation(*row) for row in self._query(sql)][:3])
         return [LabelRelation(*row) for row in self._query(sql)]
