@@ -1,8 +1,20 @@
-from mbz import MusicBrainz
-from nx import Graph
+from mbz2nx.mbz import MusicBrainz
+from mbz2nx.nx import Graph
 
 
-def label_graph(pg_config):
+def _default_pgconfig(pgconfig):
+    newconfig = {
+        "database": "musicbrainz_db",
+        "user": "musicbrainz",
+        "password": "musicbrainz",
+        "host": "localhost",
+        "port": 5432,
+    }
+    newconfig.update(pgconfig)
+    return newconfig
+
+def label_graph(pgconfig={}):
+    pg_config = _default_pgconfig(pgconfig)
     mbz = MusicBrainz()
     graph = Graph()
     mbz.connect(pg_config)

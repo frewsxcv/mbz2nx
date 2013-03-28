@@ -34,8 +34,8 @@ class MusicBrainz():
     def __init__(self):
         psycopg2.extensions.register_type(psycopg2.extensions.UNICODE)
 
-    def connect(self, pg_config):
-        self._conn = psycopg2.connect(**pg_config)
+    def connect(self, pgconfig):
+        self._conn = psycopg2.connect(**pgconfig)
 
     def disconnect(self):
         self._conn.close()
