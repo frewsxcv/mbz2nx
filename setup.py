@@ -3,6 +3,7 @@ from distutils.core import setup
 from mbz2nx import __version__ as version
 
 
+# TODO: add requirements (networkx, psycopg2)
 metadata = {
     'name': 'mbz2nx',
     'description': 'Generates NetworkX databases populated from MusicBrainz databases',
