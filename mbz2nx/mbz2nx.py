@@ -18,6 +18,3 @@ def label_graph(pgconfig={}):
     graph.add_relations(mbz.relations)
     mbz.disconnect()
     return graph.graph
-
-
-# {"database": "musicbrainz_db", "user": "musicbrainz", "password": "musicbrainz"}
