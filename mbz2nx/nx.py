@@ -15,3 +15,6 @@ class Graph():
         for relation in relations:
             self.graph.add_edge(relation.child, relation.parent,
                     attr_dict={"rel": relation.type})
+            if relation.type == "business_association_with":
+                self.graph.add_edge(relation.parent, relation.child,
+                        attr_dict={"rel": relation.type})

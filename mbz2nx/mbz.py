@@ -18,7 +18,7 @@ class LabelRelation():
         "label reissue": (1, "catalog_reissued_by"),
         "label rename": (0, "renamed_to"),
         "label distribution": (1, "catalog_distributed_by"),
-        "business association": (0, "business_association_with") # TODO: shouldn't this be bidirectional?
+        "business association": (0, "business_association_with")
     }
 
     def __init__(self, type, id1, id2):
